@@ -1,0 +1,9 @@
+sample_id,file_type,files
+2i_ESC,fastq,input/bleckwehl21/fastq/2i_ESC_1.fastq.gz;input/bleckwehl21/fastq/2i_ESC_2.fastq.gz
+SL_ESC,fastq,input/bleckwehl21/fastq/SL_ESC_1.fastq.gz;input/bleckwehl21/fastq/SL_ESC_2.fastq.gz
+d1_EpiLC,fastq,input/bleckwehl21/fastq/d1_EpiLC_1.fastq.gz;input/bleckwehl21/fastq/d1_EpiLC_2.fastq.gz
+d2_EpiLC,fastq,input/bleckwehl21/fastq/d2_EpiLC_1.fastq.gz;input/bleckwehl21/fastq/d2_EpiLC_2.fastq.gz
+d2_EB,fastq,input/bleckwehl21/fastq/d2_EB_1.fastq.gz;input/bleckwehl21/fastq/d2_EB_2.fastq.gz
+d3_EpiLC,fastq,input/bleckwehl21/fastq/d3_EpiLC_1.fastq.gz;input/bleckwehl21/fastq/d3_EpiLC_2.fastq.gz
+d4_EB,fastq,input/bleckwehl21/fastq/d4_EB_1.fastq.gz;input/bleckwehl21/fastq/d4_EB_2.fastq.gz
+EpiSC,fastq,input/bleckwehl21/fastq/EpiSC_1.fastq.gz;input/bleckwehl21/fastq/EpiSC_2.fastq.gz
