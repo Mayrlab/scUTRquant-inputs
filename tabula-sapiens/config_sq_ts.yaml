@@ -1,0 +1,13 @@
+dataset_name: "tabula-sapiens"
+sample_file: "input/tabula-sapiens/metadata/ts-sample-sheet.utr3.csv"
+cell_annots: "input/tabula-sapiens/metadata/ts-cell-annots.csv.gz"
+
+target: "utrome_hg38_v1"
+bx_whitelist: "extdata/bxs/3M-february-2018.txt"
+tech: "10xv3"
+strand: "--fr-stranded"
+
+min_umis: 1500  ## MF: confirmed that all annotated cells have > 1500 UMIs
+output_type:
+  - "txs"
+  - "genes"

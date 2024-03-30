@@ -1,0 +1,32 @@
+configfile: "config_downloads.yaml"
+
+import pandas as pd
+import os
+from glob import glob
+
+# make sure the tmp directory exists
+os.makedirs(config["tmp_dir"], exist_ok=True)
+
+print("Loading S3 data sheet...")
+samples = pd.read_csv(config['s3_sheet'], index_col='sample_id')
+print("Loaded %d samples." % len(samples))
+
+rule all:
+    input:
+        expand("bam/{sample_id}.bam", sample_id=samples.index.values)
+        
+rule download_bam_aws:
+    output:
+        bam="bam/{sample_id}.bam",
+        bai="bam/{sample_id}.bam.bai"
+    params:
+        profile=config['s3_profile'],
+        bucket=config['s3_bucket'],
+        key=lambda wcs: samples.s3_key[wcs.sample_id]
+    conda:
+        "envs/aws.yaml"
+    shell:
+        """
+        aws s3api get-object --profile {params.profile} --bucket {params.bucket} --key {params.key} {output.bam}
+        aws s3api get-object --profile {params.profile} --bucket {params.bucket} --key {params.key}.bai {output.bai}
+        """

@@ -1,0 +1,6 @@
+tmp_dir: "/fscratch/fanslerm"
+
+## NB: S3 profile should be defined in ~/.aws/credentials
+s3_profile: "mayrlab"
+s3_bucket: "czb-tabula-sapiens"
+s3_sheet: "metadata/ts-s3-sheet.final.utr3.csv"
