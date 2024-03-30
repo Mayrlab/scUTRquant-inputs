@@ -1,0 +1,10 @@
+dataset_name: "tmuris"
+sample_file: "input/tmuris/sample_sheet.csv"
+cell_annots: "input/tmuris/annotations_droplet.csv"
+
+target: "utrome_mm10_v2"
+bx_whitelist: "extdata/bxs/737K-august-2016.txt"
+tech: "10xv2"
+strand: "--fr-stranded"
+
+min_umis: 500

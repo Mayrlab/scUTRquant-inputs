@@ -1,0 +1,35 @@
+configfile: "config_download.yaml"
+
+import pandas as pd
+
+print("Loading annotation data...")
+samples = pd.read_csv(config['sampleFile'], sep='\t', index_col='sample_id')
+
+rule all:
+    input:
+        expand("bam/{sample_id}.bam.bai", sample_id=samples.index.values)
+        
+rule download_bam_aws:
+    output:
+        "bam/{sample_id}.bam"
+    params:
+        url=lambda wcs: samples.aws[wcs.sample_id]
+    conda:
+        "envs/samtools.yaml"
+    shell:
+        """
+        wget -O {output} '{params.url}'
+        """
+
+rule samtools_index:
+    input:
+        "bam/{sample_id}.bam"
+    output:
+        "bam/{sample_id}.bam.bai"
+    threads: 4
+    conda:
+        "envs/samtools.yaml"
+    shell:
+        """
+        samtools index -@ {threads} {input}
+        """
