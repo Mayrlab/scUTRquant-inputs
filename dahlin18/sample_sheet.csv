@@ -1,0 +1,7 @@
+sample_id,file_type,files
+SIGAB1,bam,input/dahlin18/bam/lsk_sigab1.bam
+SIGAC1,bam,input/dahlin18/bam/lsk_sigac1.bam
+SIGAD1,bam,input/dahlin18/bam/lsk_sigad1.bam
+SIGAF1,bam,input/dahlin18/bam/lk_sigaf1.bam
+SIGAG1,bam,input/dahlin18/bam/lk_sigag1.bam
+SIGAH1,bam,input/dahlin18/bam/lk_sigah1.bam
