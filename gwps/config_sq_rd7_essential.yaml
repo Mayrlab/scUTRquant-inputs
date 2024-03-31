@@ -1,0 +1,12 @@
+dataset_name: "rd7_essential"
+sample_file: "input/gwps/metadata/rd7-essential-sample-sheet.csv"
+cell_annots: "input/gwps/metadata/rd7-essential-cell-annots.csv.gz"
+
+target: "utrome_hg38_v1"
+bx_whitelist: "extdata/bxs/3M-february-2018.txt"
+tech: "10xv3"
+strand: "--fr-stranded"
+
+min_umis: 1200  ## MF: confirmed that all annotated cells have > 1200 UMIs
+output_type:
+  - "txs"

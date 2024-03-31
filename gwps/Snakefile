@@ -1,0 +1,56 @@
+configfile: "config_downloads_kd6.yaml"
+#configfile: "config_downloads_rd7.yaml"
+
+import pandas as pd
+import os
+from glob import glob
+
+# make sure the tmp directory exists
+os.makedirs(config["tmp_dir"], exist_ok=True)
+
+print("Loading runs...")
+runs = pd.read_csv(config['runs_sheet'], index_col='run_id')
+print("Loaded %d runs." % len(runs))
+
+rule all:
+    input:
+        expand("bam/{run_id}.bam.bai", run_id=runs.index.values)
+        
+rule download_bam_aws:
+    output:
+        "bam/{run_id}.bam"
+    params:
+        url=lambda wcs: runs.url[wcs.run_id]
+    conda:
+        "envs/samtools.yaml"
+    shell:
+        """
+        wget -O {output} '{params.url}'
+        """
+
+rule samtools_index:
+    input:
+        "bam/{run_id}.bam"
+    output:
+        "bam/{run_id}.bam.bai"
+    threads: 4
+    conda:
+        "envs/samtools.yaml"
+    resources:
+        mem_mb=1000
+    shell:
+        """
+        samtools index -@ {threads} {input}
+        """
+
+rule samtools_flagstats:
+    input:
+        "bam/{run_id}.bam"
+    output:
+        "qc/flagstat/{run_id}.txt"
+    conda:
+        "envs/samtools.yaml"
+    shell:
+        """
+        samtools flagstat {input} > {output}
+        """
