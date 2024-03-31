@@ -1,0 +1,38 @@
+configfile: "config_downloads.yaml"
+
+import pandas as pd
+
+print("Loading runs...")
+runs = pd.read_csv(config['runs_sheet'], index_col='run_id')
+print("Loaded %d runs." % len(runs))
+
+rule all:
+    input:
+        expand("bam/{run_id}.bam.bai", run_id=runs.index.values)
+        
+rule download_bam_aws:
+    output:
+        "bam/{run_id}.bam"
+    params:
+        url=lambda wcs: runs.url[wcs.run_id]
+    conda:
+        "envs/samtools.yaml"
+    shell:
+        """
+        wget -O {output} '{params.url}'
+        """
+
+rule samtools_index:
+    input:
+        "bam/{run_id}.bam"
+    output:
+        "bam/{run_id}.bam.bai"
+    threads: 4
+    conda:
+        "envs/samtools.yaml"
+    resources:
+        mem_mb=1000
+    shell:
+        """
+        samtools index -@ {threads} {input}
+        """

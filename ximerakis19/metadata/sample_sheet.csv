@@ -1,0 +1,17 @@
+sample_id,file_type,files
+YX1L,bam,input/ximerakis19/bam/YX1L.bam
+YX2L,bam,input/ximerakis19/bam/YX2L.bam
+YX3R,bam,input/ximerakis19/bam/YX3R.bam
+YX4R,bam,input/ximerakis19/bam/YX4R.bam
+YX5R,bam,input/ximerakis19/bam/YX5R.bam
+YX6L,bam,input/ximerakis19/bam/YX6L.bam
+YX7R,bam,input/ximerakis19/bam/YX7R.bam
+YX8L,bam,input/ximerakis19/bam/YX8L.bam
+OX1X,bam,input/ximerakis19/bam/OX1X.bam
+OX2X,bam,input/ximerakis19/bam/OX2X.bam
+OX3X,bam,input/ximerakis19/bam/OX3X.bam
+OX4X,bam,input/ximerakis19/bam/OX4X.bam
+OX5X,bam,input/ximerakis19/bam/OX5X.bam
+OX6X,bam,input/ximerakis19/bam/OX6X.bam
+OX7X,bam,input/ximerakis19/bam/OX7X.bam
+OX8X,bam,input/ximerakis19/bam/OX8X.bam
