@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/779834595.svg)](https://zenodo.org/doi/10.5281/zenodo.10901351)
+
 ## Overview
 This repository provides input sample sheets for running data through 
 [the scUTRquant pipeline](https://github.com/Mayrlab/scUTRquant)
