@@ -1,0 +1,10 @@
+sample_id,file_type,files
+mESC,fastq,input/guo19/fastq/mESC_1.fastq.gz;input/guo19/fastq/mESC_2.fastq.gz
+MEF,fastq,input/guo19/fastq/MEF_1.fastq.gz;input/guo19/fastq/MEF_2.fastq.gz
+MEF_OSK_d0,fastq,input/guo19/fastq/MEF_OSK_d0_1.fastq.gz;input/guo19/fastq/MEF_OSK_d0_2.fastq.gz
+MEF_OSK_d1,fastq,input/guo19/fastq/MEF_OSK_d1_1.fastq.gz;input/guo19/fastq/MEF_OSK_d1_2.fastq.gz
+MEF_OSK_d3,fastq,input/guo19/fastq/MEF_OSK_d3_1.fastq.gz;input/guo19/fastq/MEF_OSK_d3_2.fastq.gz
+MEF_OSK_d5,fastq,input/guo19/fastq/MEF_OSK_d5_1.fastq.gz;input/guo19/fastq/MEF_OSK_d5_2.fastq.gz
+MEF_OSK_d6,fastq,input/guo19/fastq/MEF_OSK_d6_1.fastq.gz;input/guo19/fastq/MEF_OSK_d6_2.fastq.gz
+MEF_OSK_d7,fastq,input/guo19/fastq/MEF_OSK_d7_1.fastq.gz;input/guo19/fastq/MEF_OSK_d7_2.fastq.gz
+MEF_OSK_d8,fastq,input/guo19/fastq/MEF_OSK_d8_1.fastq.gz;input/guo19/fastq/MEF_OSK_d8_2.fastq.gz
